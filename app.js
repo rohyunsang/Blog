@@ -2,6 +2,7 @@ var port = process.env.PORT || 3000,
     http = require('http'),
     fs = require('fs'),
     html = fs.readFileSync('index.html');
+    html = fs.readFileSync('network.html');
 
 var log = function(entry) {
     fs.appendFileSync('/tmp/sample-app.log', new Date().toISOString() + ' - ' + entry + '\n');
