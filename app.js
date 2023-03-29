@@ -32,6 +32,10 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/markdown', (req, res) => {
+    res.sendFile(__dirname + '/your_html_file.html'); 
+  });
+
 app.listen(port, () => {
     console.log('Server running at http://127.0.0.1:' + port + '/');
 });
