@@ -1,40 +1,37 @@
-var port = process.env.PORT || 3000,
-    http = require('http'),
-    fs = require('fs'),
-    html = fs.readFileSync('index.html');
-    html = fs.readFileSync('network.html');
+const express = require('express');
+const app = express();
+const fs = require('fs');
 
-var log = function(entry) {
+app.use(express.static('public'));
+
+const port = process.env.PORT || 3000;
+
+const log = (entry) => {
     fs.appendFileSync('/tmp/sample-app.log', new Date().toISOString() + ' - ' + entry + '\n');
 };
 
-var server = http.createServer(function (req, res) {
-    if (req.method === 'POST') {
-        var body = '';
+app.post('/', (req, res) => {
+    let body = '';
 
-        req.on('data', function(chunk) {
-            body += chunk;
-        });
+    req.on('data', (chunk) => {
+        body += chunk;
+    });
 
-        req.on('end', function() {
-            if (req.url === '/') {
-                log('Received message: ' + body);
-            } else if (req.url = '/scheduled') {
-                log('Received task ' + req.headers['x-aws-sqsd-taskname'] + ' scheduled at ' + req.headers['x-aws-sqsd-scheduled-at']);
-            }
-
-            res.writeHead(200, 'OK', {'Content-Type': 'text/plain'});
-            res.end();
-        });
-    } else {
-        res.writeHead(200);
-        res.write(html);
-        res.end();
-    }
+    req.on('end', () => {
+        log('Received message: ' + body);
+        res.status(200).send('OK');
+    });
 });
 
-// Listen on port 3000, IP defaults to 127.0.0.1
-server.listen(port);
+app.post('/scheduled', (req, res) => {
+    log('Received task ' + req.headers['x-aws-sqsd-taskname'] + ' scheduled at ' + req.headers['x-aws-sqsd-scheduled-at']);
+    res.status(200).send('OK');
+});
 
-// Put a friendly message on the terminal
-console.log('Server running at http://127.0.0.1:' + port + '/');
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
+
+app.listen(port, () => {
+    console.log('Server running at http://127.0.0.1:' + port + '/');
+});
