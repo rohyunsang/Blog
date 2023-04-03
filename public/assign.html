@@ -1,83 +1,782 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rohyunsang blog</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-        }
-        
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-        
-        h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-        
-        main {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        aside {
-            flex-basis: 20%;
-            margin-right: 20px;
-        }
-        
-        article {
-            flex-basis: 80%;
-        }
-        
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        li {
-            margin-bottom: 10px;
-        }
-        
-        a {
-            color: #333;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            color: #f00;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>RohYunSang.log</h1>
-    </header>
-    
-    <main>        
-        <article>
-            <h2>Assignment</h2>
-            <ul>
-                <li>
-                    <embed src="assign1.pdf" type="application/pdf" width="150%" height="1080px" />
-                </li>
-            </ul>
-        </article>
-    </main>
-    
-</body>
-</html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>컴퓨터 네트워크 과제</title><style>
+
+
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+	
+</style></head><body><article id="f106c1cf-2b4d-4573-bdb6-e4ab458d6cb4" class="page sans"><header><h1 class="page-title">컴퓨터 네트워크 과제</h1></header><div class="page-body"><p id="be7fd7ef-18e1-46c2-bb59-79e1e9bfb9ae" class=""><a href="assign1.pdf" download>Download Assignment 1 PDF</a>
+tcp protocol :
+is a protocol used in computer networking to provide reliable, ordered, and error-checked delivery of data between applications running on hosts. It is a connection-oriented protocol</p><p id="b247d53e-8555-485a-abf1-e36111564e01" class="">osi 7 layer :</p><figure id="6e52bd69-d8ad-43ac-a314-dde5b94905f0" class="image"><a href="https://velog.velcdn.com/images/rohyunsang/post/7f90dbb8-df0e-4804-a980-c8bb9a09eeb5/image.jpg"><img src="https://velog.velcdn.com/images/rohyunsang/post/7f90dbb8-df0e-4804-a980-c8bb9a09eeb5/image.jpg"/></a></figure><p id="c20e164d-e3ea-4f7f-b3e6-06726f03af41" class="">Physical Layer: This layer deals with the physical transmission of data, including the transmission medium, connectors, and electrical signals.
+Data Link Layer: This layer provides error-free transmission of data over a physical link.
+Network Layer: This layer is responsible for routing data between different networks.
+Transport Layer: This layer provides reliable end-to-end data delivery between applications running on different hosts. It ensures that data is delivered in the correct order, without errors or duplication.
+Session Layer: This layer establishes, manages, and terminates sessions between applications on different hosts.
+Presentation Layer: This layer deals with the format and presentation of data to applications.
+Application Layer: This layer provides access to network services for end-user applications. It includes protocols such as HTTP, FTP, SMTP, and Telnet,</p><p id="a0ae780c-d6f0-45b0-a826-d6f338604100" class="">internet :
+Network&#x27;s Network</p><p id="e2d1418c-0584-435a-9a89-a068f8528a38" class="">packet :</p><figure id="6e42459b-d003-4098-8f9b-a5716a14a452" class="image"><a href="https://velog.velcdn.com/images/rohyunsang/post/74d5ec11-51c3-48cf-95d1-7f70ecc5e59e/image.png"><img src="https://velog.velcdn.com/images/rohyunsang/post/74d5ec11-51c3-48cf-95d1-7f70ecc5e59e/image.png"/></a></figure><p id="bb5fa370-efb9-4559-bfe8-37f8b2c321d4" class="">In computer networking, a packet is a unit of data that is transmitted between devices over a network. It consists of a header and a payload. The header contains information such as the source and destination addresses, while the payload contains the actual data being transmitted.</p><p id="14580c35-f281-4da2-9672-1d2eec09eb6c" class="">Application :
+In the context of computer networking, an application refers to a software program or set of programs designed to perform a specific function or set of functions</p><p id="a023cfc5-4869-44f3-8f46-98e065f26bf2" class="">Protocol :
+In computer networking, a protocol refers to a set of rules and procedures governing communication between devices over a network.</p><p id="c931923d-a8f1-41f2-9a43-3982bda40393" class="">A protocol specifies how data is transmitted, received, and processed between devices, as well as how errors are detected and corrected, and how devices are identified and authenticated.</p><p id="034fb654-6504-45f3-87fb-19f2e07c990f" class="">osi 7 layer vs dod model :</p><figure id="155db93b-556b-416f-afae-b803048b605a" class="image"><a href="https://velog.velcdn.com/images/rohyunsang/post/e8914c52-90e8-4d1f-b7bb-6a3a356fd352/image.jpg"><img src="https://velog.velcdn.com/images/rohyunsang/post/e8914c52-90e8-4d1f-b7bb-6a3a356fd352/image.jpg"/></a></figure><p id="431a1279-112f-4aef-85f3-693b3771b191" class="">there are conceptual frameworks understanding and designing computer networks.</p><p id="f3f36f95-6379-4331-b7cf-ee7dee7ef0f1" class="">The OSI model includes the following layers:</p><p id="fbd181fc-fefb-4ced-a583-2e876cb21a79" class="">Physical Layer
+Data Link Layer
+Network Layer
+Transport Layer
+Session Layer
+Presentation Layer
+Application Layer</p><p id="bb63b09a-9026-4b93-afb9-7b66dfe8a5c4" class="">The DOD model includes the following layers:</p><p id="aee31491-75b1-4721-94c6-006b6e0bd21f" class="">Network Access Layer
+Internet Layer
+Transport Layer
+Application Layer</p><p id="1683b2f9-abda-448f-8379-189a3bcc45ab" class="">protocol layer :
+In computer networking, a protocol layer refers to a specific level of communication within a protocol stack. A protocol stack is a set of protocols organized in a hierarchical manner, with each protocol layer responsible for a specific aspect of network communication.</p><p id="42ad060d-4ebb-4da4-b56b-6aa8bc16c630" class="">internet protocol stack :
+The Internet Protocol (IP) stack, also known as the TCP/IP protocol stack, is a set of protocols used to establish communication between devices over the Internet or other networks.</p><p id="78aee938-3dc9-425c-ae14-72365e48017d" class="">The TCP/IP protocol stack consists of four layers:</p><ol type="1" id="925c7943-1396-464b-836a-ecae0074f241" class="numbered-list" start="1"><li>Network Access Layer</li></ol><ol type="1" id="3c23ea99-09a2-4fc4-84ab-c3590ecd2b35" class="numbered-list" start="2"><li>Internet Layer</li></ol><ol type="1" id="6715407f-2615-4ec2-b644-0fe19d224c7c" class="numbered-list" start="3"><li>Transport Layer</li></ol><ol type="1" id="f21fc364-abf6-43ce-9d7a-87af4d5ddd85" class="numbered-list" start="4"><li>Application Layer</li></ol><p id="f3ffa0fb-5801-4588-abbc-0c05690a9809" class="">application layer :
+you know ? application layer is OSI top layer
+application architectures :
+The application architecture refers to the design of an application system and how different components of the system interact with each other. It involves decisions about the choice of programming languages, the use of libraries and frameworks, the design of the user interface, and the implementation of various services and functionality.</p><p id="88895322-2ee4-47b3-a5f1-2e10f1269d6c" class="">peer to peer architectures :</p><figure id="6a3edafb-b2fb-4d4f-8bbb-ca2f465126e8" class="image"><a href="https://velog.velcdn.com/images/rohyunsang/post/196b35bd-9847-436f-b083-69309a62f7b2/image.png"><img src="https://velog.velcdn.com/images/rohyunsang/post/196b35bd-9847-436f-b083-69309a62f7b2/image.png"/></a></figure><p id="678eab1c-8618-492f-a595-a630f8607b16" class="">each other computer acting client and server</p><p id="4df05bf8-4157-4de9-9093-003357d979b8" class="">client server architectures :
+It enables the sharing of data and services such as email and file transfer</p><p id="bf2f9716-34c0-4e98-8540-6015099c9bbd" class="">socket :
+We want to access it at the user-mode application level, but how do we do this? We abstracting TCP as a file-type interface.</p><p id="4404ca74-9b37-4c28-b7b3-672c2153a15e" class="">socket structure :
+used to define a communication endpoint
+socket = address + IP + Port Number + Protocol</p><p id="b71b7e34-c107-4ccd-8f41-1437c0a0ffb2" class="">Http / Tcp protocol :
+this two guys are network protocol use web communication
+Http is based on a request response model
+Tcp is reliable</p><p id="0f634acc-55de-4a18-9163-f554ef13f362" class="">Tcp vs Udp :</p><figure id="09ad5a7a-cf1e-48a0-87f6-c956a29b4631" class="image"><a href="https://velog.velcdn.com/images/rohyunsang/post/2909eadb-600a-4365-85e1-6dc2cb6c2a49/image.png"><img src="https://velog.velcdn.com/images/rohyunsang/post/2909eadb-600a-4365-85e1-6dc2cb6c2a49/image.png"/></a></figure><p id="808d57b1-5c3b-4c65-8e12-471f014ede8a" class="">Udp is fast but not reliable
+Tcp is slow but provide reliable
+So, we are going to pick one, considering our system.</p><p id="455872c0-da58-4b21-9515-ccb4146a55cd" class="">Assign
+1.
+HTML, HTML5, CSS, Javascript
+Jsp Ruby,, etc</p><p id="4668a8d1-60e8-4c4c-9908-4bf1715ac2f4" class="">HTML5 is the latest version of HTML and includes new features such as support for video and audio playback, new form controls, and improved semantic elements.</p><p id="c9e23111-e0f2-487a-9e98-4fcfd1d1f497" class="">CSS (Cascading Style Sheets) is a style sheet language used to describe the presentation and layout of web pages, including the colors, fonts, and spacing.</p><p id="d095f990-aa60-4067-8e2f-df8cb11b1db8" class="">JavaScript is a scripting language used to create interactive and dynamic web pages, such as adding animations, responding to user input, and manipulating the content of a web page in real-time.</p><p id="127f1b54-eaa6-4de6-9704-9fd90cc43f97" class="">JSP (JavaServer Pages) is a technology used to create dynamic web pages using Java programming language. It allows embedding Java code into HTML pages, which enables the creation of web applications with server-side functionality.</p><p id="51acae00-6b48-48b1-b535-0b900aed9537" class="">Ruby is a programming language often used for web development, especially with the Ruby on Rails framework. It is known for its readability and conciseness and is often used to build dynamic and scalable web applications.</p><p id="105621e5-cd55-4438-97a5-bb81a04b9957" class="">Node.js is a JavaScript runtime environment built on Chrome&#x27;s V8 JavaScript engine. It allows developers to run JavaScript code on the server-side, which enables building scalable and efficient web applications.</p><p id="a0011a1d-d4af-4c24-98b9-e724703c89b0" class="">React is a JavaScript library used for building user interfaces for web applications. It allows developers to create reusable UI components and provides a fast and efficient way to update the user interface in response to changes in the application state.</p><ol type="1" id="19a010f6-e119-410a-bd4d-708f51b02dee" class="numbered-list" start="1"><li>C/S architecture P2P&#x27;s Pros and Cons</li></ol><p id="06a32ab7-9ec3-4cfb-9a2b-085530ba5881" class="">lets make long sentense upper one =&gt;
+Client/Server architecture Peer to Peer Adventages and DisAdventages</p><p id="97dd4c3a-8a61-4a91-9fa8-5314dcebb29e" class="">Pros :
+Provides a decentralized system that is more resilient and fault-tolerant
+Offers better scalability and performance since there is no central server bottleneck
+Enables more efficient use of network resources</p><p id="6dbc8d64-adfe-4225-80ab-64273d75a705" class="">Cons :
+Can be more difficult to manage and maintain due to the lack of central control
+May be less secure due to the lack of centralized authentication and access control
+May suffer from slower data transfer speeds due to the distributed nature of the network</p><p id="53043cea-2f07-4a50-af8b-83386fb7540a" class="">p2p responds quickly, so it is used a lot in fighting games, but there is a problem with not being able to catch the hacks</p><ol type="1" id="48037f66-a643-4f06-ab1b-88fc133e5f34" class="numbered-list" start="1"><li>cloud computing</li></ol><figure id="d0b55210-ad3f-4f53-90c1-e5f79690a945" class="image"><a href="https://velog.velcdn.com/images/rohyunsang/post/725549b3-689c-45fc-8b74-3d927358c77a/image.png"><img src="https://velog.velcdn.com/images/rohyunsang/post/725549b3-689c-45fc-8b74-3d927358c77a/image.png"/></a></figure><p id="ec394ed9-54a8-4412-9d8a-61791d07aeff" class="">relies on remote servers hosted on the Internet to store, manage, and process data</p><p id="6af964ac-0f4c-4fa8-add1-c05731b46579" class="">IaaS : Infrastruct as a Service :
+provides virtualized computing resources such as servers, storage, and network resources Customers can use these resources using by make Customers Service</p><p id="b3a6d3e0-96d2-485b-af8e-62d77d044c9a" class="">PaaS : Platform as a Service :
+Provide manages the infrastructure and customers focus on the application.</p><p id="b790286b-5376-478e-beda-8929ff240acb" class="">SaaS : Software as a Service :
+provides ready-to-use applications and services</p><ol type="1" id="62ee9773-3a95-4d91-8558-fa7525fe77d8" class="numbered-list" start="1"><li>IPC :
+It is Inter Process Communication
+using socket and Provide supports &quot;access control&quot; for shared resources through communication between processors.</li></ol><p id="5a849756-5aa1-419e-853c-a24870a7868d" class="">URL structure :
+URL = Scheme + Domain + Port + Path + Query + Fragment
+=&gt; scheme://domain:port/path?query#fragment</p><p id="6f97ae04-a490-416d-8469-9645da069402" class="">Web Server Port Number :</p><figure id="69074ddf-22ce-48be-9f7e-93fd3d8d6648" class="image"><a href="https://velog.velcdn.com/images/rohyunsang/post/aa602ffa-bbf7-48a3-9804-bb473465e171/image.PNG"><img src="https://velog.velcdn.com/images/rohyunsang/post/aa602ffa-bbf7-48a3-9804-bb473465e171/image.PNG"/></a></figure><p id="0a93e4db-125e-4047-96a4-cb5633e8851a" class="">why is important? if we imagine receive some data but we have wholota many process running in your computer so we gonna pick that one receive process</p><p id="4be24b48-f013-4cca-a7e8-0dfb77d9418e" class="">HTTP Request message :
+packet of information that is sent by a client</p><p id="4bdca46e-f09b-45db-b709-aba33f2be2cb" class="">Web caches :
+cache&#x27;s purpose we need faster one So we predict working guys job
+it is correct? =&gt; fast
+and use cache system in web? Web Cache</p><p id="b9bf2588-810a-47ef-b258-108fa361c653" class="">DNS :</p><figure id="c6e00882-e005-4259-973c-c04608719391" class="image"><a href="https://velog.velcdn.com/images/rohyunsang/post/7f51dcd2-1c73-40b4-8a60-59d4ce43b5bb/image.PNG"><img src="https://velog.velcdn.com/images/rohyunsang/post/7f51dcd2-1c73-40b4-8a60-59d4ce43b5bb/image.PNG"/></a></figure><p id="53a76c44-890c-4ecb-b534-7bc4bbd7ac3a" class="">Domain Name System, not Service i was know this is Service
+if join some site we cant read longlonglong ip adress so we make easy one</p><p id="cef2aaf9-b3f9-4171-a577-5421a0c98685" class="">DNS Protocol :
+Dns query =&gt; Dns resolver =&gt; request Dns Server =&gt; respone ip address</p><p id="4bbbd114-175f-4490-b2cd-14bec9311526" class="">FTP Protocol :
+these day we dont use this
+why? it is slow... but until use multi all in one printer scan</p><p id="6278e2ec-d03f-4a88-80a3-ecd955ac1251" class="">Host and Domain :
+guys are related terms that are used to identify resources on the internet.</p><p id="964e3b75-1ddf-448e-9da4-2431331eac2b" class="">Video streaming Service :
+down divided video file and run, down, run</p><p id="b2ca19e7-21b1-40b5-ad45-6dfce1f4c3ed" class="">Tcp socket programming :</p><pre id="e8810c38-faed-42c6-b6bc-45e177873e52" class="code code-wrap"><code>#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;arpa/inet.h&gt;
+#include &lt;unistd.h&gt;
+
+using namespace std;
+
+int main(int argc, char const *argv[]) {
+
+    int sock = 0, valread;
+    struct sockaddr_in serv_addr;
+    char *hello = &quot;Hello from client&quot;;
+    char buffer[1024] = {0};
+
+    // Create socket
+    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) &lt; 0) {
+        cout &lt;&lt; &quot;Socket creation error&quot; &lt;&lt; endl;
+        return -1;
+    }
+
+    // Set server details
+    serv_addr.sin_family = AF_INET;
+    serv_addr.sin_port = htons(8080);
+
+    // Convert IPv4 and IPv6 addresses from text to binary form
+    if (inet_pton(AF_INET, &quot;127.0.0.1&quot;, &amp;serv_addr.sin_addr) &lt;= 0) {
+        cout &lt;&lt; &quot;Invalid address/ Address not supported&quot; &lt;&lt; endl;
+        return -1;
+    }
+
+    // Connect to server
+    if (connect(sock, (struct sockaddr *)&amp;serv_addr, sizeof(serv_addr)) &lt; 0) {
+        cout &lt;&lt; &quot;Connection Failed&quot; &lt;&lt; endl;
+        return -1;
+    }
+
+    // Send message to server
+    send(sock, hello, strlen(hello), 0);
+    cout &lt;&lt; &quot;Hello message sent to server&quot; &lt;&lt; endl;
+
+    // Receive message from server
+    valread = read(sock, buffer, 1024);
+    cout &lt;&lt; buffer &lt;&lt; endl;
+
+    return 0;
+}
+
+
+</code></pre></div></article></body></html>
