@@ -32,10 +32,6 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
-app.get('/markdown', (req, res) => {
-    res.sendFile(__dirname + '/your_html_file.html'); 
-  });
-
 app.get('/assgin', (req, res) => {
   // Render the resume page
   res.render('assgin');
