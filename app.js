@@ -37,6 +37,11 @@ app.get('/assgin', (req, res) => {
   res.render('assgin');
 }); 
 
+app.get('/portfolio',(req,res) =>{
+    res.render('portfolio')
+});
+
+
 app.listen(port, () => {
     console.log('Server running at http://127.0.0.1:' + port + '/');
 });
